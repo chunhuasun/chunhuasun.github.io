@@ -81,7 +81,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/天宫/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -115,13 +115,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/tags/天宫/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title>Tag: 天宫 | Hexo</title>
   
 
 
@@ -140,8 +140,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -214,154 +213,53 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
+
+  
+  
+  
+  <div class="post-block tag">
+
+    <div id="posts" class="posts-collapse">
+      <div class="collection-title">
+        <h1>天宫<small>Tag</small>
+        </h1>
+      </div>
+
       
-
-  
-
-  
-  
-  
+        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/天宫备忘录/">
+    <header class="post-header">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
+      <h2 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/23/天宫备忘录/" itemprop="url">天宫备忘录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
+            <a class="post-title-link" href="/2018/05/23/天宫备忘录/" itemprop="url">
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span itemprop="name">天宫备忘录</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-23T10:59:25+08:00">
-                2018-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
+            </a>
         
-          
-            <h1 id="天宫学习"><a href="#天宫学习" class="headerlink" title="天宫学习"></a>天宫学习</h1><h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><blockquote>
-<p>组件仓库中选择Mysql组件</p>
-</blockquote>
-<p><img src="E:\study\blog\source\_posts\md_files\0523.png" alt=""></p>
-<blockquote>
-<p>配置名称、CPU</p>
-</blockquote>
-<p><img src="E:\study\blog\source\_posts\md_files\052302.png" alt=""></p>
-<blockquote>
-<p>配置主机地址、密码</p>
-</blockquote>
-<p><img src="E:\study\blog\source\_posts\md_files\052303.png" alt=""></p>
-<blockquote>
-<p>运行，等待2~3分钟部署完成。返回服务进行查看</p>
-</blockquote>
-<p><img src="E:\study\blog\source\_posts\md_files\052304.png" alt=""></p>
-<blockquote>
-<p>点击服务名称，可以查看服务状态和使用tty访问服务。</p>
-</blockquote>
-<p><img src="E:\study\blog\source\_posts\md_files\052305.png" alt=""></p>
-<hr>
-<h4 id="服务中的Mysql如何访问"><a href="#服务中的Mysql如何访问" class="headerlink" title="服务中的Mysql如何访问"></a>服务中的Mysql如何访问</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TTY</span><br><span class="line">GoTTY</span><br><span class="line">是一个web版的SSH连接工具，可以在web网页上进行UNIX的命令操作。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>gotty - 基于Web的实时终端展示方式</p>
-</blockquote>
-<h5 id="GoTTY上操作mysql"><a href="#GoTTY上操作mysql" class="headerlink" title="GoTTY上操作mysql"></a>GoTTY上操作mysql</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 进入mysql（要求输入mysql登录密码）</span><br><span class="line">mysql -u root -p</span><br><span class="line">// 退出mysql</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+      </h2>
 
-          
-        
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-23T10:59:25+08:00"
+              content="2018-05-23" >
+          05-23
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
       
     </div>
-    
-    
-    
 
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
   
   
   
-  </article>
-
-
-    
-  </section>
 
   
 
