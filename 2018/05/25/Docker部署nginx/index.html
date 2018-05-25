@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next pisces use-motion" lang="zh-Hans">
+<html class="theme-next pisces use-motion" lang="zh-CN">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -74,7 +74,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="No Trust Evil" type="application/atom+xml" />
 
 
 
@@ -86,10 +86,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker部署nginx">
 <meta property="og:url" content="http://yoursite.com/2018/05/25/Docker部署nginx/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="No Trust Evil">
 <meta property="og:description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx在容器中启动Nginx1docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/w">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-25T09:46:39.402Z">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-25T09:55:57.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker部署nginx">
 <meta name="twitter:description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx在容器中启动Nginx1docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/w">
@@ -108,7 +108,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -128,7 +128,7 @@
 
 
 
-  <title>Docker部署nginx | Hexo</title>
+  <title>Docker部署nginx | No Trust Evil</title>
   
 
 
@@ -140,7 +140,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
 
   
   
@@ -158,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">No Trust Evil</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -188,7 +188,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            Home
           </a>
         </li>
       
@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -244,7 +244,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="No Trust Evil">
     </span>
 
     
@@ -262,9 +262,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T14:59:31+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-25T14:59:31+08:00">
                 2018-05-25
               </time>
             
@@ -312,8 +312,7 @@
 <h6 id="UNIX下的操作"><a href="#UNIX下的操作" class="headerlink" title="UNIX下的操作"></a>UNIX下的操作</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 删除文件夹</span><br><span class="line">rm -rf nginx.conf</span><br><span class="line"><span class="meta">#</span> 新建文件夹</span><br><span class="line">mkdir nginx</span><br></pre></td></tr></table></figure>
 <h5 id="将容器中的Nginx配置信息拷贝到主机中"><a href="#将容器中的Nginx配置信息拷贝到主机中" class="headerlink" title="将容器中的Nginx配置信息拷贝到主机中"></a>将容器中的Nginx配置信息拷贝到主机中</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 需要检查主机的目录，nginx.conf 应该是文件不能是目录</span><br><span class="line">docker cp &#123;CONTAINER ID&#125;:/etc/nginx/nginx.conf /usr/conf/nginx/nginx.conf</span><br></pre></td></tr></table></figure>
 <h5 id="使用挂载配置文件的方式在容器中启动Nginx"><a href="#使用挂载配置文件的方式在容器中启动Nginx" class="headerlink" title="使用挂载配置文件的方式在容器中启动Nginx"></a>使用挂载配置文件的方式在容器中启动Nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name mynginx -v /usr/www:/www -v /usr/conf/nginx/nginx.conf:/nginx/nginx.conf -v /usr/logs:/wwwlogs  -d nginx</span><br></pre></td></tr></table></figure>
-<h2 id="使用Nginx反向代理tomcat"><a href="#使用Nginx反向代理tomcat" class="headerlink" title="使用Nginx反向代理tomcat"></a>使用Nginx反向代理tomcat</h2><h4 id="配置Nginx文件"><a href="#配置Nginx文件" class="headerlink" title="配置Nginx文件"></a>配置Nginx文件</h4><p># </p>
-
+<h2 id="使用Nginx反向代理tomcat"><a href="#使用Nginx反向代理tomcat" class="headerlink" title="使用Nginx反向代理tomcat"></a>使用Nginx反向代理tomcat</h2><h4 id="配置Nginx文件"><a href="#配置Nginx文件" class="headerlink" title="配置Nginx文件"></a>配置Nginx文件</h4>
       
     </div>
     
@@ -407,10 +406,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -435,7 +434,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">2</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -448,7 +447,7 @@
               <div class="site-state-item site-state-tags">
                 
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-name">tags</span>
                 
               </div>
             
@@ -517,7 +516,7 @@
 </div>
 
 
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -525,7 +524,7 @@
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
 
 
