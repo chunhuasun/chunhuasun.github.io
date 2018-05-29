@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx">
+<meta name="description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx在容器中启动Nginx1docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/w">
 <meta name="keywords" content="Docker,Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker部署nginx">
 <meta property="og:url" content="http://yoursite.com/2018/05/25/Docker部署nginx/index.html">
 <meta property="og:site_name" content="No Trust Evil">
-<meta property="og:description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx">
+<meta property="og:description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx在容器中启动Nginx1docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/w">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T09:28:52.159Z">
+<meta property="og:updated_time" content="2018-05-29T09:32:58.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker部署nginx">
-<meta name="twitter:description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx">
+<meta name="twitter:description" content="Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx 拉取官方的Nginx镜像1docker pull nginx 查看当前的Docker镜像1docker images 运行Nginx在容器中启动Nginx1docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/w">
 
 
 
@@ -308,8 +308,7 @@
         <h1 id="Docker部署Nginx"><a href="#Docker部署Nginx" class="headerlink" title="Docker部署Nginx"></a>Docker部署Nginx</h1><h3 id="建立Nginx的Docker镜像"><a href="#建立Nginx的Docker镜像" class="headerlink" title="建立Nginx的Docker镜像"></a>建立Nginx的Docker镜像</h3><h5 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx</span><br></pre></td></tr></table></figure>
 <h5 id="拉取官方的Nginx镜像"><a href="#拉取官方的Nginx镜像" class="headerlink" title="拉取官方的Nginx镜像"></a>拉取官方的Nginx镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
 <h5 id="查看当前的Docker镜像"><a href="#查看当前的Docker镜像" class="headerlink" title="查看当前的Docker镜像"></a>查看当前的Docker镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3><a id="more"></a>
-<h5 id="在容器中启动Nginx"><a href="#在容器中启动Nginx" class="headerlink" title="在容器中启动Nginx"></a>在容器中启动Nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/wwwlogs  -d nginx</span><br></pre></td></tr></table></figure>
+<h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3><h5 id="在容器中启动Nginx"><a href="#在容器中启动Nginx" class="headerlink" title="在容器中启动Nginx"></a>在容器中启动Nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/wwwlogs  -d nginx</span><br></pre></td></tr></table></figure>
 <h5 id="查看运行容器"><a href="#查看运行容器" class="headerlink" title="查看运行容器"></a>查看运行容器</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 <h5 id="容器的停止、启动、删除"><a href="#容器的停止、启动、删除" class="headerlink" title="容器的停止、启动、删除"></a>容器的停止、启动、删除</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop  &#123;CONTAINER ID&#125;</span><br><span class="line">docker rm &#123;CONTAINER ID&#125;</span><br><span class="line">docker start &#123;CONTAINER ID&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="进入运行中的容器"><a href="#进入运行中的容器" class="headerlink" title="进入运行中的容器"></a>进入运行中的容器</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it &#123;CONTAINER ID&#125; /bin/bash</span><br></pre></td></tr></table></figure>

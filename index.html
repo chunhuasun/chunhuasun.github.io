@@ -307,10 +307,12 @@
 
       
         
-          <h1 id="Docker部署Nginx"><a href="#Docker部署Nginx" class="headerlink" title="Docker部署Nginx"></a>Docker部署Nginx</h1><h3 id="建立Nginx的Docker镜像"><a href="#建立Nginx的Docker镜像" class="headerlink" title="建立Nginx的Docker镜像"></a>建立Nginx的Docker镜像</h3><h5 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx</span><br></pre></td></tr></table></figure>
-<h5 id="拉取官方的Nginx镜像"><a href="#拉取官方的Nginx镜像" class="headerlink" title="拉取官方的Nginx镜像"></a>拉取官方的Nginx镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
-<h5 id="查看当前的Docker镜像"><a href="#查看当前的Docker镜像" class="headerlink" title="查看当前的Docker镜像"></a>查看当前的Docker镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3>
+          
+          Docker部署Nginx建立Nginx的Docker镜像查找镜像1docker search nginx
+拉取官方的Nginx镜像1docker pull nginx
+查看当前的Docker镜像1docker images
+运行Nginx在容器中启动Nginx1docker run -p 80:8
+          ...
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/05/25/Docker部署nginx/#more" rel="contents">
@@ -436,10 +438,33 @@
 
       
         
-          对联通天宫环境的学习记录，仅用于学习，版权归联通所有。
+          
+          天宫学习安装mysql
+组件仓库中选择Mysql组件
+
+
+
+配置名称、CPU
+
+
+
+配置主机地址、密码
+
+
+
+运行，等待2~3分钟部署完成。返回服务进行查看
+
+
+
+点击服务名称，可以查看服务状态和使用tty访问服务。
+
+
+
+服务中的Mysql如何访问123TTYGoTTY是一个web版的SSH连接工
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/05/23/天宫备忘录/">
+            <a class="btn" href="/2018/05/23/天宫备忘录/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
