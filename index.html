@@ -311,7 +311,8 @@
             <h1 id="Docker部署Nginx"><a href="#Docker部署Nginx" class="headerlink" title="Docker部署Nginx"></a>Docker部署Nginx</h1><h3 id="建立Nginx的Docker镜像"><a href="#建立Nginx的Docker镜像" class="headerlink" title="建立Nginx的Docker镜像"></a>建立Nginx的Docker镜像</h3><h5 id="查找镜像"><a href="#查找镜像" class="headerlink" title="查找镜像"></a>查找镜像</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx</span><br></pre></td></tr></table></figure>
 <h5 id="拉取官方的Nginx镜像"><a href="#拉取官方的Nginx镜像" class="headerlink" title="拉取官方的Nginx镜像"></a>拉取官方的Nginx镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull nginx</span><br></pre></td></tr></table></figure>
 <h5 id="查看当前的Docker镜像"><a href="#查看当前的Docker镜像" class="headerlink" title="查看当前的Docker镜像"></a>查看当前的Docker镜像</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
-<h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3><h5 id="在容器中启动Nginx"><a href="#在容器中启动Nginx" class="headerlink" title="在容器中启动Nginx"></a>在容器中启动Nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/wwwlogs  -d nginx</span><br></pre></td></tr></table></figure>
+<h3 id="运行Nginx"><a href="#运行Nginx" class="headerlink" title="运行Nginx"></a>运行Nginx</h3><p>&lt; !–more– &gt;</p>
+<h5 id="在容器中启动Nginx"><a href="#在容器中启动Nginx" class="headerlink" title="在容器中启动Nginx"></a>在容器中启动Nginx</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 80:80 --name mynginx -v /usr/www:/www  -v /usr/logs:/wwwlogs  -d nginx</span><br></pre></td></tr></table></figure>
 <h5 id="查看运行容器"><a href="#查看运行容器" class="headerlink" title="查看运行容器"></a>查看运行容器</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
 <h5 id="容器的停止、启动、删除"><a href="#容器的停止、启动、删除" class="headerlink" title="容器的停止、启动、删除"></a>容器的停止、启动、删除</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker stop  &#123;CONTAINER ID&#125;</span><br><span class="line">docker rm &#123;CONTAINER ID&#125;</span><br><span class="line">docker start &#123;CONTAINER ID&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="进入运行中的容器"><a href="#进入运行中的容器" class="headerlink" title="进入运行中的容器"></a>进入运行中的容器</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker exec -it &#123;CONTAINER ID&#125; /bin/bash</span><br></pre></td></tr></table></figure>
@@ -439,61 +440,14 @@
 
       
         
-          
-            <h1 id="天宫学习"><a href="#天宫学习" class="headerlink" title="天宫学习"></a>天宫学习</h1><h4 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h4><blockquote>
-<p>组件仓库中选择Mysql组件</p>
-</blockquote>
-<p><img src="http://mycos-1253822284.file.myqcloud.com/gitblog/blogimages/0523.png" alt=""></p>
-<blockquote>
-<p>配置名称、CPU</p>
-</blockquote>
-<p><img src="http://mycos-1253822284.file.myqcloud.com/gitblog/blogimages/052302.png" alt=""></p>
-<blockquote>
-<p>配置主机地址、密码</p>
-</blockquote>
-<p><img src="http://mycos-1253822284.file.myqcloud.com/gitblog/blogimages/052303.png" alt=""></p>
-<blockquote>
-<p>运行，等待2~3分钟部署完成。返回服务进行查看</p>
-</blockquote>
-<p><img src="http://mycos-1253822284.file.myqcloud.com/gitblog/blogimages/052304.png" alt=""></p>
-<blockquote>
-<p>点击服务名称，可以查看服务状态和使用tty访问服务。</p>
-</blockquote>
-<p><img src="http://mycos-1253822284.file.myqcloud.com/gitblog/blogimages/052305.png" alt=""></p>
-<hr>
-<h4 id="服务中的Mysql如何访问"><a href="#服务中的Mysql如何访问" class="headerlink" title="服务中的Mysql如何访问"></a>服务中的Mysql如何访问</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TTY</span><br><span class="line">GoTTY</span><br><span class="line">是一个web版的SSH连接工具，可以在web网页上进行UNIX的命令操作。</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>gotty - 基于Web的实时终端展示方式</p>
-</blockquote>
-<h5 id="GoTTY上操作mysql"><a href="#GoTTY上操作mysql" class="headerlink" title="GoTTY上操作mysql"></a>GoTTY上操作mysql</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 进入mysql（要求输入mysql登录密码）</span><br><span class="line">mysql -u root -p</span><br><span class="line">// 退出mysql</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>建立数据库</p>
-</blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> real_name;</span><br><span class="line"><span class="keyword">use</span> real_name;</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="使用Mysql组件后无法登陆"><a href="#使用Mysql组件后无法登陆" class="headerlink" title="使用Mysql组件后无法登陆"></a>使用Mysql组件后无法登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">使用mysql组件安装数据库，使用web-demo安装web服务后，无法登陆。</span><br><span class="line">改成mysql-demo组件安装数据库；</span><br><span class="line">对比发现：mysql-demo 里面建立有一个 test 数据库，test数据库中有一张user表 里面是有 admin的数据的。</span><br><span class="line">这个在 Web-demo 的配置中有出现。</span><br></pre></td></tr></table></figure>
-<p><img src="http://mycos-1253822284.file.myqcloud.com/gitblog/blogimages/052306.png" alt=""></p>
-<h4 id="使用mysql组件"><a href="#使用mysql组件" class="headerlink" title="使用mysql组件"></a>使用mysql组件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">换回使用 mysql组件安装数据库 </span><br><span class="line">建立 real_name 数据库</span><br><span class="line">增加数据表，和数据。</span><br><span class="line">create database real_name;</span><br><span class="line">create table user( password char(20),name char(20));</span><br><span class="line">insert into user values(&apos;admin&apos;,&apos;admin&apos;);</span><br><span class="line"></span><br><span class="line">建立 Web-demo 时使用的配置信息：</span><br><span class="line">db url</span><br><span class="line">jdbc:mysql://10.125.128.24:3306/real_name</span><br><span class="line">重新建立web 使用 admin 登陆成功</span><br></pre></td></tr></table></figure>
-<p><strong>总结</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 建立mysql 可以直接修改端口、密码；</span><br><span class="line">2. 建立web-demo需要重点配置  db url </span><br><span class="line">   10.125.128.24:31306/real_name  分别为 mysql的主机地址：端口/数据库名称（数据库和表必须存在）</span><br><span class="line">   并配置密码。</span><br><span class="line">3. 登陆使用的是 user表中的数据。</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="本地的war包如何上天宫"><a href="#本地的war包如何上天宫" class="headerlink" title="本地的war包如何上天宫"></a>本地的war包如何上天宫</h3><hr>
-<p>宇哥好，我是重庆开发部的孙春华，局方想将项目放到天宫上。</p>
-<p><strong>我存在以下几点疑问</strong></p>
-<ol>
-<li><p>局方给的天宫地址和技术文档，只有天宫上现有的组件的配置，咨询了天宫联系人，答复说本地的项目要放天宫上有两种方式，1、dcos的，将应用打成docker镜像；2、分布式paas的，将应用注册在edas上。</p>
-<p>我想了解下我们这边的项目放天宫上是使用的edas吧。</p>
-</li>
-<li><p>我在Confluence上查找了下关于edas的文档，提到edas是需要安装在ecs上的</p>
-<p>就是说必须先购买阿里的ECS虚拟服务器才能进行后续的操作么？</p>
-</li>
-<li><p>如果我这边要先做一个简单的demo放到天宫上练练部署的流程</p>
-<p>我该从哪点入手？</p>
-</li>
-</ol>
-<p>特向历经多个天宫大项目的你请教下这方面的经验，感谢帮助。</p>
-
-          
+          对联通天宫环境的学习记录，仅用于学习，版权归联通所有。
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/23/天宫备忘录/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -653,6 +607,7 @@
 </span>
 </div>
 
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
@@ -664,6 +619,7 @@
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
 
+-->
 
 
 
