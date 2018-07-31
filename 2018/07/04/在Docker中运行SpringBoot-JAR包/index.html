@@ -90,7 +90,7 @@
 <meta property="og:description" content="在Docker中运行SpringBoot JAR包生成SpringBoot JAR包12Maven Build 设置Goals: pakcage  本机启动jar包12cmdD:\&amp;gt;java -jar spring-boot-0.0.1.jar 创建Docker镜像文件12345678910111、新建文件夹： /root/myjar/springbootsw/2、将jar包上传到 /roo">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://mycos-1253822284.coscd.myqcloud.com/gitblog/blogimages/20180704001.png">
-<meta property="og:updated_time" content="2018-07-05T10:00:08.883Z">
+<meta property="og:updated_time" content="2018-07-06T09:21:39.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Docker中运行SpringBoot JAR包">
 <meta name="twitter:description" content="在Docker中运行SpringBoot JAR包生成SpringBoot JAR包12Maven Build 设置Goals: pakcage  本机启动jar包12cmdD:\&amp;gt;java -jar spring-boot-0.0.1.jar 创建Docker镜像文件12345678910111、新建文件夹： /root/myjar/springbootsw/2、将jar包上传到 /roo">
@@ -315,7 +315,7 @@
 <h4 id="进入容器查看JAR包运行日志"><a href="#进入容器查看JAR包运行日志" class="headerlink" title="进入容器查看JAR包运行日志"></a>进入容器查看JAR包运行日志</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、进入容器：</span><br><span class="line">   docker exec -it springsw bash</span><br><span class="line">   进入容器无法查看日志，换方式</span><br><span class="line"></span><br><span class="line">2、docker logs 查看实时日志：</span><br><span class="line">   docker logs -f -t --since="2018-07-04" --tail=100 springsw</span><br><span class="line">   --since : 此参数指定了输出日志开始日期，即只输出指定日期之后的日志。</span><br><span class="line">   -f : 查看实时日志</span><br><span class="line">   -t : 查看日志产生的日期</span><br><span class="line">   -tail=100 : 查看最后的100条日志。</span><br><span class="line">   springsw : 容器名称</span><br></pre></td></tr></table></figure>
 <h4 id="将JAR包调整到容器组中启动"><a href="#将JAR包调整到容器组中启动" class="headerlink" title="将JAR包调整到容器组中启动"></a>将JAR包调整到容器组中启动</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、修改  /usr/image_nginx/docker-compose.yml 文件</span><br><span class="line">   image: spingjpa 修改为新的镜像 image: springsw</span><br><span class="line">2、停止之前启动中的容器组</span><br><span class="line">   进入 /usr/image_nginx目录 </span><br><span class="line">   执行 docker-compose down</span><br><span class="line">3、启动容器组</span><br><span class="line">   docker-compose up -d</span><br></pre></td></tr></table></figure>
 <h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.superplayer.top/wxsub1</span><br></pre></td></tr></table></figure>
-<h4 id="后续更新JAR包后的发布流程"><a href="#后续更新JAR包后的发布流程" class="headerlink" title="后续更新JAR包后的发布流程"></a>后续更新JAR包后的发布流程</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、上传JAR包到目录： /root/myjar/springbootsw/</span><br><span class="line">2、重新创建镜像 </span><br><span class="line">   cd /root/myjar/springbootsw</span><br><span class="line">   docker build -t springsw . </span><br><span class="line">3、进入容器组目录： /usr/image_nginx</span><br><span class="line">   停止容器组：    docker-compose down</span><br><span class="line">   启动容器组：    docker-compose up -d</span><br></pre></td></tr></table></figure>
+<h4 id="后续更新JAR包后的发布流程"><a href="#后续更新JAR包后的发布流程" class="headerlink" title="后续更新JAR包后的发布流程"></a>后续更新JAR包后的发布流程</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1、上传JAR包到目录： /root/myjar/springbootsw/</span><br><span class="line">2、重新创建镜像 </span><br><span class="line">   cd /root/myjar/springbootsw</span><br><span class="line">   docker build -t springsw . </span><br><span class="line">3、进入容器组目录： /usr/image_nginx</span><br><span class="line">   停止容器组：    docker-compose down</span><br><span class="line">   启动容器组：    docker-compose up -d</span><br><span class="line">4、查看容器日志</span><br><span class="line">   docker logs -f -t --since="2018-07-04" --tail=100 image_nginx_sping102_1</span><br><span class="line">   docker logs -f -t --since="2018-07-04" --tail=100 image_nginx_sping101_1</span><br></pre></td></tr></table></figure>
 <h2 id="考虑多个应用的情况，使用同一个Nginx进行代理"><a href="#考虑多个应用的情况，使用同一个Nginx进行代理" class="headerlink" title="考虑多个应用的情况，使用同一个Nginx进行代理"></a>考虑多个应用的情况，使用同一个Nginx进行代理</h2><h4 id="Nginx的相关配置"><a href="#Nginx的相关配置" class="headerlink" title="Nginx的相关配置"></a>Nginx的相关配置</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">1、通过配置 server下的location映射解析，区分不同的应用</span><br><span class="line">2、nginx支持同时设置多组的负载均衡，用来给不用的server来使用。</span><br><span class="line">   配置多组负载均衡来实现不同server的响应。</span><br><span class="line">   在配置 </span><br><span class="line">   upstream tomcat_client &#123;</span><br><span class="line">         server t01:8080 weight=1;</span><br><span class="line">   &#125; </span><br><span class="line">   upstream tomcat_client_sub6 &#123;</span><br><span class="line">         server t02:8080 weight=1;</span><br><span class="line">   &#125;</span><br><span class="line">   时候  </span><br><span class="line">   注意是使用的 8080 </span><br><span class="line">   而不是启动的主机上映射的端口 8081</span><br><span class="line">   应该是使用的容器的实际运行端口，而非映射出来的宿主机的端口</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>nginx.conf 的核心修改</p>
@@ -325,7 +325,7 @@
 <p>docker-compose.yml 的核心修改</p>
 </blockquote>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">  links: </span><br><span class="line">    - sping101:t01 </span><br><span class="line">    - sping102:t02 </span><br><span class="line">sping102: </span><br><span class="line">  image: springsub6</span><br><span class="line">  ports: </span><br><span class="line">    - "8081:8080"</span><br><span class="line">  restart: always</span><br></pre></td></tr></table></figure>
-<h4 id="修改后的相关操作"><a href="#修改后的相关操作" class="headerlink" title="修改后的相关操作"></a>修改后的相关操作</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">进入容器组配置目录 /usr/image_nginx/</span><br><span class="line">1、停止容器组</span><br><span class="line">   docker-compose down</span><br><span class="line">2、重新生成Nginx镜像</span><br><span class="line">   docker build -t myfznginx .</span><br><span class="line">3、启动容器组</span><br><span class="line">   docker-compose up -d</span><br></pre></td></tr></table></figure>
+<h4 id="修改后的相关操作"><a href="#修改后的相关操作" class="headerlink" title="修改后的相关操作"></a>修改后的相关操作</h4><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">进入容器组配置目录 /usr/image_nginx/</span><br><span class="line">1、停止容器组</span><br><span class="line">   docker-compose down</span><br><span class="line">2、重新生成Nginx镜像</span><br><span class="line">   docker build -t myfznginx .</span><br><span class="line">3、启动容器组</span><br><span class="line">   docker-compose up -d</span><br><span class="line">4、查看容器日志</span><br><span class="line">   docker logs -f -t --since="2018-07-04" --tail=100 image_nginx_sping102_1</span><br><span class="line">   docker logs -f -t --since="2018-07-04" --tail=100 image_nginx_sping101_1</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -374,6 +374,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/31/独立日/" rel="prev" title="独立日">
+                独立日 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -454,7 +458,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -467,7 +471,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
