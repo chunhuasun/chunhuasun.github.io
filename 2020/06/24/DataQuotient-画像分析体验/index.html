@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="[toc] 画像分析体验总结：整体分为两个部分：标签管理：1231、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签2、配置同步计划和任务，进行数据的同步管理，3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。 群体画像：123更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的">
+<meta name="description" content="画像分析体验总结：整体分为两个部分：标签管理：1231、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签2、配置同步计划和任务，进行数据的同步管理，3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。 群体画像：123更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的角色能更快速">
 <meta name="keywords" content="阿里,大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DataQuotient 画像分析体验">
 <meta property="og:url" content="http://yoursite.com/2020/06/24/DataQuotient-画像分析体验/index.html">
 <meta property="og:site_name" content="No Trust Evil">
-<meta property="og:description" content="[toc] 画像分析体验总结：整体分为两个部分：标签管理：1231、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签2、配置同步计划和任务，进行数据的同步管理，3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。 群体画像：123更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的">
+<meta property="og:description" content="画像分析体验总结：整体分为两个部分：标签管理：1231、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签2、配置同步计划和任务，进行数据的同步管理，3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。 群体画像：123更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的角色能更快速">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://chunhuasun.github.io/images/20200624/image-20200623143253026.png">
 <meta property="og:image" content="https://chunhuasun.github.io/images/20200624/image-20200623144417775.png">
@@ -116,10 +116,10 @@
 <meta property="og:image" content="https://chunhuasun.github.io/images/20200624/image-20200624151846111.png">
 <meta property="og:image" content="https://chunhuasun.github.io/images/20200624/image-20200624152650917.png">
 <meta property="og:image" content="https://chunhuasun.github.io/images/20200624/image-20200624153402343.png">
-<meta property="og:updated_time" content="2020-06-24T08:40:13.145Z">
+<meta property="og:updated_time" content="2020-06-24T08:50:22.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DataQuotient 画像分析体验">
-<meta name="twitter:description" content="[toc] 画像分析体验总结：整体分为两个部分：标签管理：1231、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签2、配置同步计划和任务，进行数据的同步管理，3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。 群体画像：123更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的">
+<meta name="twitter:description" content="画像分析体验总结：整体分为两个部分：标签管理：1231、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签2、配置同步计划和任务，进行数据的同步管理，3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。 群体画像：123更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的角色能更快速">
 <meta name="twitter:image" content="https://chunhuasun.github.io/images/20200624/image-20200623143253026.png">
 
 
@@ -333,16 +333,19 @@
       
 
       
-        <p>[toc]</p>
-<h3 id="画像分析体验总结："><a href="#画像分析体验总结：" class="headerlink" title="画像分析体验总结："></a>画像分析体验总结：</h3><h4 id="整体分为两个部分："><a href="#整体分为两个部分：" class="headerlink" title="整体分为两个部分："></a>整体分为两个部分：</h4><h5 id="标签管理："><a href="#标签管理：" class="headerlink" title="标签管理："></a>标签管理：</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签</span><br><span class="line">2、配置同步计划和任务，进行数据的同步管理，</span><br><span class="line">3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。</span><br></pre></td></tr></table></figure>
+        <h3 id="画像分析体验总结："><a href="#画像分析体验总结：" class="headerlink" title="画像分析体验总结："></a>画像分析体验总结：</h3><h4 id="整体分为两个部分："><a href="#整体分为两个部分：" class="headerlink" title="整体分为两个部分："></a>整体分为两个部分：</h4><h5 id="标签管理："><a href="#标签管理：" class="headerlink" title="标签管理："></a>标签管理：</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、配置对应的数据源，将数据源表定义为“实体”，字段定义为标签</span><br><span class="line">2、配置同步计划和任务，进行数据的同步管理，</span><br><span class="line">3、类似于数据的映射，将技术语言与业务语言通过实体，关系，标签进行映射。</span><br></pre></td></tr></table></figure>
 <h5 id="群体画像："><a href="#群体画像：" class="headerlink" title="群体画像："></a>群体画像：</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">更主要的是关注业务上每个字段的筛选，过滤条件，组合出满足业务要求的分析场景。</span><br><span class="line">更是提供了群体计算、群体分析、群体对比、相似度分析，使得从业务的角色能更快速、更灵活、更主观的操作数据。</span><br><span class="line">通过多种图表方式展现圈定的结果。</span><br></pre></td></tr></table></figure>
 <h4 id="体验前后的差异对比："><a href="#体验前后的差异对比：" class="headerlink" title="体验前后的差异对比："></a>体验前后的差异对比：</h4><h5 id="没有使用阿里产品前的实现方式："><a href="#没有使用阿里产品前的实现方式：" class="headerlink" title="没有使用阿里产品前的实现方式："></a>没有使用阿里产品前的实现方式：</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每一次业务规则的调整，都需要修改代码，重新执行，才能得到最新的结果</span><br></pre></td></tr></table></figure>
 <h5 id="使用阿里产品的实现方式："><a href="#使用阿里产品的实现方式：" class="headerlink" title="使用阿里产品的实现方式："></a>使用阿里产品的实现方式：</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">只需要在界面上重新配置过滤规则，然后执行筛选，就能得到最新的结果，并能通过多种图表方式直观的呈现出来。</span><br></pre></td></tr></table></figure>
-<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><p>==省去了重新修改代码的环节，从业务的角度调整规则即可实现画像分析。随着多种图表展现形式对结果的反馈，可以不断的完善规则，从而提高了画像分析的准确性和时效性。==</p>
-<h4 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h4><p>==基础的标签（指标）数据生成好后，提供给业务人员，进行业务角度的数据分析使用，可以快速的将群体方案直接发布为API对外提供==</p>
+<h4 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h4><blockquote>
+<p><span style="color:red">省去了重新修改代码的环节，从业务的角度调整规则即可实现画像分析。随着多种图表展现形式对结果的反馈，可以不断的完善规则，从而提高了画像分析的准确性和时效性。</span></p>
+</blockquote>
+<h4 id="适用场景："><a href="#适用场景：" class="headerlink" title="适用场景："></a>适用场景：</h4><blockquote>
+<p><span style="color:red">基础的标签（指标）数据生成好后，提供给业务人员，进行业务角度的数据分析使用，可以快速的将群体方案直接发布为API对外提供</span></p>
+</blockquote>
 <hr>
 <h3 id="目标与操作过程："><a href="#目标与操作过程：" class="headerlink" title="目标与操作过程："></a>目标与操作过程：</h3><h4 id="本次目标："><a href="#本次目标：" class="headerlink" title="本次目标："></a>本次目标：</h4><p>1、尝试用这份数据找分析出，高压力中年油腻男，单身带娃，无父母补贴，低学历，高年龄</p>
-<p>2、尝试用这份数据找分析出，单身女强人，单身无娃，有父母补贴，高学历，中低年龄  [^foot002]</p>
+<p>2、尝试用这份数据找分析出，单身女强人，单身无娃，有父母补贴，高学历，中低年龄 </p>
 <h4 id="前提条件-–-数据准备："><a href="#前提条件-–-数据准备：" class="headerlink" title="前提条件 – 数据准备："></a>前提条件 – 数据准备：</h4><h5 id="一、准备数据源："><a href="#一、准备数据源：" class="headerlink" title="一、准备数据源："></a>一、准备数据源：</h5><p>1、建立数据表：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`test_data_quotient_person_info`</span> (</span><br><span class="line">  <span class="string">`person_id`</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'人员ID'</span>,</span><br><span class="line">  <span class="string">`id_card_number`</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'身份证号'</span>,</span><br><span class="line">  <span class="string">`person_name`</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'姓名'</span>,</span><br><span class="line">	<span class="string">`person_sex`</span> <span class="built_in">varchar</span>(<span class="number">32</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'性别： 1-男 2-女 3-不详'</span>,</span><br><span class="line">  <span class="string">`marry_tag`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'婚姻标签：0-未婚 1-已婚'</span>,</span><br><span class="line">  <span class="string">`children_number_tag`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'孩子个数标签'</span>,</span><br><span class="line">  <span class="string">`education_tag`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'学历标签：0-初等学历 1-中等学历 2-高等学历'</span>,</span><br><span class="line">	<span class="string">`person_age`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'年龄'</span>,</span><br><span class="line">	<span class="string">`parent_number_tag`</span> <span class="built_in">int</span>(<span class="number">10</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span> <span class="keyword">COMMENT</span> <span class="string">'父母存活个数标签'</span></span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
 <p>2、配置数据：</p>
@@ -376,12 +379,12 @@
 <p><span style="color:red">不能配置已经上线的标签，标签需要先下线，才能配置同步</span></p>
 </blockquote>
 <blockquote>
-<p>==目标云计算资源需要选择，mysql；选择odps，在群体画像–群体列表中将无法找到云计算资源==  </p>
+<p><span style="color:red">目标云计算资源需要选择，mysql；选择odps，在群体画像–群体列表中将无法找到云计算资源</span> </p>
 </blockquote>
 <p><img src="https://chunhuasun.github.io/images/20200624/image-20200624112227260.png" alt="image-20200624112227260"></p>
 <p>2、同步计划配置完成后点击启动，将数据同步到画像云计算资源中</p>
 <p><img src="https://chunhuasun.github.io/images/20200624/image-20200624114328594.png" alt="image-20200624114328594"></p>
-<p>3、可在同步任务中查看同步状态，和进行重跑操作，以及查看错误日志 <a href="任务同步成功后**foot001**.">^foot001</a></p>
+<p>3、可在同步任务中查看同步状态，和进行重跑操作，以及查看错误日志</p>
 <p><img src="https://chunhuasun.github.io/images/20200624/image-20200624114449742.png" alt="image-20200624114449742"></p>
 <h5 id="六、API服务："><a href="#六、API服务：" class="headerlink" title="六、API服务："></a>六、API服务：</h5><blockquote>
 <p>与dataworks的数据服务功能类似</p>
@@ -414,8 +417,7 @@
 <h5 id="九、全流程体验："><a href="#九、全流程体验：" class="headerlink" title="九、全流程体验："></a>九、全流程体验：</h5><blockquote>
 <p>源数据中的样本数据无满足“单身女强人”标签的用户，从源数据中新增一个，然后看出如何同步的画像分析中</p>
 </blockquote>
-<p>1、配置目标群体：   </p>
-<p>[^foot002]: 目标群体说明 <strong>foot002</strong>.</p>
+<p>1、配置目标群体：</p>
 <p><img src="https://chunhuasun.github.io/images/20200624/image-20200624150858411.png" alt="image-20200624150858411"></p>
 <p>2、源数据中增加一条“单身女强人”用户：</p>
 <p><img src="https://chunhuasun.github.io/images/20200624/image-20200624151846111.png" alt="image-20200624151846111"></p>
