@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="No Trust Evil" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="优化点：一、字段分类：​       1、目的： 12345聚焦到模型核心字段的理解上，区分出工作重心，合理的利用资源。避免调入以下两个误区：1、对所有字段都理解透彻后才能有产出，低效率误区。2、对所有字段都理解都是同样的深度，同等重要误区。对数据的认识，是随着时间的变化，场景的变化，业务需求的变化，而逐渐迭代完善的，并非是一次性的工作。    ​       2、方法： 12345678910字">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据中台建设优化">
+<meta property="og:url" content="http://yoursite.com/2021/02/02/数据中台建设优化/index.html">
+<meta property="og:site_name" content="No Trust Evil">
+<meta property="og:description" content="优化点：一、字段分类：​       1、目的： 12345聚焦到模型核心字段的理解上，区分出工作重心，合理的利用资源。避免调入以下两个误区：1、对所有字段都理解透彻后才能有产出，低效率误区。2、对所有字段都理解都是同样的深度，同等重要误区。对数据的认识，是随着时间的变化，场景的变化，业务需求的变化，而逐渐迭代完善的，并非是一次性的工作。    ​       2、方法： 12345678910字">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-02-02T08:07:17.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据中台建设优化">
+<meta name="twitter:description" content="优化点：一、字段分类：​       1、目的： 12345聚焦到模型核心字段的理解上，区分出工作重心，合理的利用资源。避免调入以下两个误区：1、对所有字段都理解透彻后才能有产出，低效率误区。2、对所有字段都理解都是同样的深度，同等重要误区。对数据的认识，是随着时间的变化，场景的变化，业务需求的变化，而逐渐迭代完善的，并非是一次性的工作。    ​       2、方法： 12345678910字">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2021/02/02/数据中台建设优化/"/>
+
+
+
+
+
+  <title>数据中台建设优化 | No Trust Evil</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    
+    <a href="https://github.com/chunhuasun" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">No Trust Evil</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/02/02/数据中台建设优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="不信邪">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/jianxin.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="No Trust Evil">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数据中台建设优化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-02T16:05:51+08:00">
+                2021-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="优化点："><a href="#优化点：" class="headerlink" title="优化点："></a>优化点：</h4><h5 id="一、字段分类："><a href="#一、字段分类：" class="headerlink" title="一、字段分类："></a>一、字段分类：</h5><p>​       1、目的：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">聚焦到模型核心字段的理解上，区分出工作重心，合理的利用资源。</span><br><span class="line">避免调入以下两个误区：</span><br><span class="line">1、对所有字段都理解透彻后才能有产出，低效率误区。</span><br><span class="line">2、对所有字段都理解都是同样的深度，同等重要误区。</span><br><span class="line">对数据的认识，是随着时间的变化，场景的变化，业务需求的变化，而逐渐迭代完善的，并非是一次性的工作。</span><br></pre></td></tr></table></figure>
+<p>   ​       2、方法：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">字段分类:</span><br><span class="line">A类：主键或索引类，与数据业务高度相关，尤其会觉得数据的特性，是衡量数据唯一的标准，</span><br><span class="line">     理解不到位，可能会涉及到数据量的变化、重复数据的产生。</span><br><span class="line">B类：下游数据的生成核心依据类，</span><br><span class="line">     可能是生成下游数据的筛选条件、判断条件、关联条件；</span><br><span class="line">     可能是生成下游数据的计算条件、分组条件、排序条件；</span><br><span class="line">				例如：拉链表依据的业务时间</span><br><span class="line">	 理解不到位，可能会导致下游数据无法正常生成，错误生成。</span><br><span class="line">C类：描述属性，仅在本表独立使用，即使错误也仅仅影响当前的数据，不会对下游数据造成影响；</span><br><span class="line">	 一对一的直接使用，下游使用时不存在转换，不涉及到处理逻辑，即使错误也仅仅是影响到单一字段的数据内容，不会对其他字段数据造成影响。</span><br></pre></td></tr></table></figure>
+<p>​       3、标准：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">整个建设过程中，应该重点分析，深入研究的是A、B两类字段，调低C类字段的较真优先级；</span><br><span class="line">C类字段：需要达到数据能正确入库；</span><br><span class="line">B类字段：需要在C类的基础上，加深对业务的理解。完整的表述在生成下游数据时候的逻辑规则，</span><br><span class="line">         涉及到码值转换的，需要提供完整（至少是能支撑生成下游数据）的码表，及其转换规则</span><br><span class="line">         涉及到计算逻辑的，需要正确体现，数据类型，精度（例如：计算平均值，不能直接使用字符类型）</span><br><span class="line">         涉及到条件筛选的，需要明确数据的全量与筛选数据的关系（例如：性别总量 = 男 + 女 ？性别总量 = 性别总量 - 男 ）</span><br><span class="line">         尤其是在涉及到数据逻辑时，一定要遵循：【MECE法则：ME-相互独立、CE-完全穷尽】</span><br><span class="line">A类字段：尽可能贴近真实的业务数据，而非按照自己的想法，阅历，想当然的敲定。一定要通过业务数据进行验证。</span><br></pre></td></tr></table></figure>
+<h5 id="二、模型使用流程："><a href="#二、模型使用流程：" class="headerlink" title="二、模型使用流程："></a>二、模型使用流程：</h5><p>​       1、目的：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">数据中台建设已经有一定的沉淀，尤其是数仓的全业务域，后续的迭代方式不再是从0做起，而是从非0做起，可能不全面，不完善，甚至可能有错，但绝对不是0.</span><br><span class="line">改变我们的建设流程，先从数仓的全业务域中查找需要用到的业务数据，而非直接从原始的业务模型中阐述逻辑。</span><br><span class="line">先当我们自身的全业务域中无法查找，或者</span><br></pre></td></tr></table></figure>
+<p>​       2、方法：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">通过字段信息、表信息，从全业务域中查询需要使用的数据项，识别出当前全业务域中的对应数据是否满足业务需求，</span><br><span class="line">满足则直接将全业务域模型当做等同于业务数据模型进行使用。</span><br><span class="line">部分满足，则提出整改意见，先完善全业务域对应的模型，再将全业务域模型当做等同于业务数据模型进行使用。</span><br><span class="line">不满足，则提出新增要求，先增加全业务域对应的模型，再将全业务域模型当做等同于业务数据模型进行使用。</span><br><span class="line">只有通过我们自身将全业务域模型用起来，才能发现全业务域数据的不足，逐渐的完善、优化全业务域模型，让他能真正的被用起来。</span><br></pre></td></tr></table></figure>
+<p>​       3、标准：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、完善全业务域模型与业务模型的对应关系，加强全业务域模型的描述内容，提高产品经理对模型的认识和理解</span><br><span class="line">2、只有将全业务域模型设计前置，在先完善全业务域模型的基础上，产品和设计都基于相同的模型进行后续的数仓应用设计，主题指标设计，才能真正的减少依赖关系，体现出数仓分层的数据隔离特性。</span><br><span class="line">   当前的情况是，产品经理从业务模型开始需求设计，当需求评审通过后，再发起全业务域模型的建设要求，全业务域模型建设完成后，放过来指导产品设计。这个过程中就存在，全业务域模型的与产品经理理解的业务模型可能存在差异，而没有及时同步信息。</span><br></pre></td></tr></table></figure>
+<h5 id="三、统一血缘关系输出物："><a href="#三、统一血缘关系输出物：" class="headerlink" title="三、统一血缘关系输出物："></a>三、统一血缘关系输出物：</h5><p>​        1、目的：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">为保证理解的一致性，产品、研发与测试需要基于同一份文档，表述表间关系、字段间关系。只有先统一了材料，才能更好的进行协同，和维护。</span><br></pre></td></tr></table></figure>
+<p>​        2、方法：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">通过xlsx的文档，体现出表与表之间的关系，表字段与表字段之间的关系。</span><br><span class="line">必须体现表间的逻辑关系，尽可能的体现出字段级关系。</span><br><span class="line">有能力者应该在关系后面体现出计算逻辑信息。</span><br></pre></td></tr></table></figure>
+<p>​        3、标准：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">参照data.csv文件格式</span><br><span class="line">至少包含4列信息：</span><br><span class="line">ssort     源表类别（可以是业务域或者数仓层级）</span><br><span class="line">source    源表名称</span><br><span class="line">target    目标表名称</span><br><span class="line">tsort     目标表类别（可以是业务域或者数仓层级）</span><br><span class="line">存储方式： UTF-8(逗号分隔)(*.csv)</span><br><span class="line">可直接转为关系图。</span><br></pre></td></tr></table></figure>
+<h4 id="流程优化，不同环节的聚焦内容："><a href="#流程优化，不同环节的聚焦内容：" class="headerlink" title="流程优化，不同环节的聚焦内容："></a>流程优化，不同环节的聚焦内容：</h4><h5 id="一、产品输出："><a href="#一、产品输出：" class="headerlink" title="一、产品输出："></a>一、产品输出：</h5><p>​      1、加强输出物内容的一致性，原型、需规、业务模型中的核心内容，至少满足拷贝粘贴后能查询出相同的信息。</p>
+<p>​      2、在先扩展数仓模型的基础上，进行后续的业务、指标设计。不能重复的造轮子，至少需要理解全域数据中心，有能力的可以理解OneId体系，和主题域的模型</p>
+<h5 id="二、需求理解："><a href="#二、需求理解：" class="headerlink" title="二、需求理解："></a>二、需求理解：</h5><p>​      1、重点放在实现上，针对A、B类字段进行深入探讨，对C类字段，尽可能的调低预期要求，降低产品的业务识别压力。</p>
+<h5 id="三、产品设计："><a href="#三、产品设计：" class="headerlink" title="三、产品设计："></a>三、产品设计：</h5><p>​       1、重点体现出关系，表之间的关联关系，字段之间的关联关系，尤其是A、B类字段的关联关系。有能力者应该在关系后面体现出计算逻辑信息。</p>
+<p>​       2、可以有自己的惯用文档，但必须要形成一份共用的文档，只有使用同一份文档，才易于维护、协同和传承。</p>
+<h5 id="四、用例设计："><a href="#四、用例设计：" class="headerlink" title="四、用例设计："></a>四、用例设计：</h5><p>​      扩展三个视野：</p>
+<p>​      1、数据的异步到达场景，有相关性的数据，未按照业务发生的顺序归集数据，当数据都归集到位后，是否能生成预期数据。</p>
+<p>​      2、数据指标间的逻辑等值性，不仅仅是同一个界面的指标才需要关注等值性，更应该关注到系统内，不同界面，同类指标间的逻辑等值性。</p>
+<p>​      3、数据间的关系检查，有关系的数据，改变或者删除某一个源信息，对结果数据的影响是否满足预期，检测关联关系：强关联，左关联。</p>
+<h5 id="五、需求沟通："><a href="#五、需求沟通：" class="headerlink" title="五、需求沟通："></a>五、需求沟通：</h5><p>​      1、沟通的成果必须有输出，保证结论、过程的可追溯性。重点内容一定是有WIKI记录的。</p>
+<p>​      2、沟通的成果，及时更新到对应的输出物中，并做好修改记录。</p>
+<h5 id="六、研发跟踪："><a href="#六、研发跟踪：" class="headerlink" title="六、研发跟踪："></a>六、研发跟踪：</h5><p>​      加强设计与实现的一致性检查，重点检查事前设计和事后实现的血缘对应关系。</p>
+<p>​      1、通过对比事前设计和执行后的数据血缘关系图进行验证。</p>
+<p>​      2、通过改变部分源头数据，检查结果数据进行验证。</p>
+<p>​      只有设计与实现一一对应，才能说明研发成果与设计是相符的，即使真有实现优于设计的情况发生，也需要及时的更新设计，保持设计与实现的一致性检查，才能在设计的基础上进行后续的迭代。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+		
+		  <div>
+		   
+
+	   	</div>
+    
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/01/06/标签体系与指标体系/" rel="next" title="标签体系与指标体系">
+                <i class="fa fa-chevron-left"></i> 标签体系与指标体系
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/jianxin.png"
+                alt="不信邪" />
+            
+              <p class="site-author-name" itemprop="name">不信邪</p>
+              <p class="site-description motion-element" itemprop="description">成功总在付出后</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#优化点："><span class="nav-number">1.</span> <span class="nav-text">优化点：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、字段分类："><span class="nav-number">1.1.</span> <span class="nav-text">一、字段分类：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、模型使用流程："><span class="nav-number">1.2.</span> <span class="nav-text">二、模型使用流程：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、统一血缘关系输出物："><span class="nav-number">1.3.</span> <span class="nav-text">三、统一血缘关系输出物：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#流程优化，不同环节的聚焦内容："><span class="nav-number">2.</span> <span class="nav-text">流程优化，不同环节的聚焦内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一、产品输出："><span class="nav-number">2.1.</span> <span class="nav-text">一、产品输出：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#二、需求理解："><span class="nav-number">2.2.</span> <span class="nav-text">二、需求理解：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#三、产品设计："><span class="nav-number">2.3.</span> <span class="nav-text">三、产品设计：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#四、用例设计："><span class="nav-number">2.4.</span> <span class="nav-text">四、用例设计：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#五、需求沟通："><span class="nav-number">2.5.</span> <span class="nav-text">五、需求沟通：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#六、研发跟踪："><span class="nav-number">2.6.</span> <span class="nav-text">六、研发跟踪：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">不信邪</span>
+
+  
+</div>
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<!--
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+-->
+
+
+
+    
+    <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+    <script>
+    if (window.mermaid) {
+mermaid.initialize("");
+    }
+    </script>
+    
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

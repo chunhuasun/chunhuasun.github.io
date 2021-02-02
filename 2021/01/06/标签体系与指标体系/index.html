@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="No Trust Evil">
 <meta property="og:description" content="标签体系与指标体系一、定义 标签是什么： 123&amp;gt; 标签是业务人员看的懂的数据；&amp;gt; 简单说就是你把用户分到多少个类里面去，通过彼此之间的联系来构成标签体系；&amp;gt;   指标是什么： 12&amp;gt; 指标是一种度量。可以监控和评估业务进程的状态，也可衡量某个功能模块的情况或效果。&amp;gt;   标签是基本实体的特征，指标是针对实体的计算结果，或者是计算框架、计算规则；脱离了基本特征，实体仍">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-06T07:36:25.505Z">
+<meta property="og:updated_time" content="2021-01-06T08:40:32.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="标签体系与指标体系">
 <meta name="twitter:description" content="标签体系与指标体系一、定义 标签是什么： 123&amp;gt; 标签是业务人员看的懂的数据；&amp;gt; 简单说就是你把用户分到多少个类里面去，通过彼此之间的联系来构成标签体系；&amp;gt;   指标是什么： 12&amp;gt; 指标是一种度量。可以监控和评估业务进程的状态，也可衡量某个功能模块的情况或效果。&amp;gt;   标签是基本实体的特征，指标是针对实体的计算结果，或者是计算框架、计算规则；脱离了基本特征，实体仍">
@@ -339,7 +339,11 @@
 <p>举例：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&gt; 属性标签：</span><br><span class="line">&gt;     性别          女</span><br><span class="line">&gt;     离婚人士      是</span><br><span class="line">&gt;     生育小孩      是</span><br><span class="line">&gt;     小孩监护人    是</span><br><span class="line">&gt; </span><br><span class="line">&gt; 统计标签</span><br><span class="line">&gt; 	对应的人数就是统计标签</span><br><span class="line">&gt; </span><br><span class="line">&gt; 算法标签</span><br><span class="line">&gt;     根据组合属性得出：  单身妈妈 群体。</span><br><span class="line">&gt;     通过分析，算法推导出这属于</span><br><span class="line">&gt;             女强人</span><br><span class="line">&gt;     则这个就是算法标签</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h3 id="四、建设"><a href="#四、建设" class="headerlink" title="四、建设"></a>四、建设</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">属性标签--&gt;统计标签;</span><br><span class="line">统计标签--&gt;算法标签;</span><br><span class="line">属性标签--&gt;算法标签;</span><br></pre></td></tr></table></figure>
+<h3 id="四、建设"><a href="#四、建设" class="headerlink" title="四、建设"></a>四、建设</h3><pre class="mermaid">graph TD;
+属性标签-->统计标签;
+统计标签-->算法标签;
+属性标签-->算法标签;</pre>
+
 <blockquote>
 <p>从认识数据开始搭建，属性标签</p>
 <p>通过属性标签圈定范围，搭建统计标签，这样才能对统计的结果给出合理的说明，数据才更具有业务使用价值。</p>
@@ -392,6 +396,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/02/02/数据中台建设优化/" rel="prev" title="数据中台建设优化">
+                数据中台建设优化 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -472,7 +480,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
